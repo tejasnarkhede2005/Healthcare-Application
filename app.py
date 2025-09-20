@@ -16,23 +16,23 @@ st.set_page_config(
 # ---------------------------
 st.markdown("""
 <style>
-/* Import Fonts - Lato for a clean, professional look */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+/* Import Fonts - Montserrat for a professional, modern feel */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
-/* Color Variables - Soft Blue & Gray Theme */
+/* Color Variables - Warm, earthy theme */
 :root {
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F0F4F8;
-  --accent-1: #4A90E2; /* Soft Blue */
-  --accent-2: #8096A9; /* Muted Gray */
-  --text-dark: #333333;
-  --text-muted: #666666;
+  --bg-primary: #F9F7F3; /* Light cream background */
+  --bg-secondary: #E9E4DB; /* Soft beige for containers */
+  --accent-1: #6A9955; /* Muted sage green */
+  --accent-2: #A8A832; /* Earthy olive */
+  --text-dark: #3E3E3E;
+  --text-muted: #6B6B6B;
   --radius: 12px;
 }
 
 /* Global Styles */
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-dark);
 }
@@ -65,8 +65,8 @@ h1 {
   background-color: var(--bg-secondary);
   border-radius: var(--radius);
   padding: 3rem;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-  border: 1px solid #E0E0E0;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  border: 1px solid #D1D1D1;
 }
 
 /* Input Fields */
@@ -74,13 +74,13 @@ input, select {
   background-color: #FFFFFF !important;
   color: var(--text-dark) !important;
   border-radius: var(--radius) !important;
-  border: 1px solid #DDDDDD !important;
+  border: 1px solid #C1C1C1 !important;
   padding: 0.75rem 1rem !important;
   transition: all 0.3s ease-in-out;
 }
 input:focus, select:focus {
   border: 1px solid var(--accent-1) !important;
-  box-shadow: 0 0 10px rgba(74, 144, 226, 0.2);
+  box-shadow: 0 0 10px rgba(106, 153, 85, 0.2);
 }
 
 /* Labels */
@@ -91,19 +91,18 @@ label {
 
 /* Button Styling */
 .stFormSubmitButton > button {
-  background-color: var(--accent-1);
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
   color: white;
   font-weight: 700;
   border: none;
   border-radius: var(--radius);
   padding: 1rem 2rem;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+  box-shadow: 0 4px 15px rgba(106, 153, 85, 0.4);
 }
 .stFormSubmitButton > button:hover {
-  background-color: #3973C1;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.6);
+  box-shadow: 0 6px 20px rgba(106, 153, 85, 0.6);
 }
 
 /* Prediction Messages */
@@ -115,10 +114,10 @@ label {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 .stSuccess {
-  background-color: #2ECC71;
+  background-color: #5cb85c;
 }
 .stInfo {
-  background-color: #3498DB;
+  background-color: #5bc0de;
 }
 
 /* Scrollbar */
@@ -126,7 +125,7 @@ label {
   width: 8px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--accent-1);
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
   border-radius: 4px;
 }
 ::-webkit-scrollbar-track {
