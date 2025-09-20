@@ -16,66 +16,68 @@ st.set_page_config(
 # ---------------------------
 st.markdown("""
 <style>
-/* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+/* Import Fonts - Poppins is a modern, clean font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+/* Color Variables */
 :root {
-  --primary: #00c6ff;
-  --secondary: #0072ff;
-  --bg-dark: #0d1b2a;
-  --bg-light: #1b263b;
-  --text-light: #e0e1dd;
-  --text-muted: #a9bcd0;
-  --radius: 12px;
+  --bg-primary: #121212;
+  --bg-secondary: #1E1E1E;
+  --accent-1: #FF85A1;
+  --accent-2: #8A2BE2;
+  --text-light: #E0E0E0;
+  --text-muted: #BDBDBD;
+  --radius: 16px;
 }
 
-/* Global */
+/* Global Styles */
 body {
-  font-family: 'Nunito', sans-serif;
-  background: var(--bg-dark);
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-primary);
   color: var(--text-light);
 }
 
-/* Main Container */
+/* Main Container Padding */
 .main .block-container {
-  padding: 2rem 1rem;
-  max-width: 1100px;
+  padding: 3rem 1.5rem;
+  max-width: 1200px;
 }
 
-/* Title */
+/* Title Styling */
 h1 {
   font-weight: 700;
   text-align: center;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  font-size: 3.5rem;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 3rem;
   margin-bottom: 1rem;
 }
 
-/* Subtitle */
+/* Subtitle/Text Styling */
 .stMarkdown p {
   text-align: center;
   color: var(--text-muted);
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
 }
 
 /* Form Container */
 .stForm {
-  background: rgba(255,255,255,0.05);
+  background-color: var(--bg-secondary);
   border-radius: var(--radius);
-  padding: 2rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  backdrop-filter: blur(15px);
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Input Styles */
+/* Input Fields */
 input, select {
-  background: var(--bg-light) !important;
+  background-color: #2c2c2c !important;
   color: var(--text-light) !important;
   border-radius: var(--radius) !important;
-  border: 1px solid #2c3e50 !important;
+  border: none !important;
+  padding: 0.75rem 1rem !important;
 }
 
 /* Labels */
@@ -84,27 +86,35 @@ label {
   color: var(--text-light) !important;
 }
 
-/* Buttons */
+/* Button Styling */
 .stFormSubmitButton > button {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
   color: white;
   font-weight: 600;
   border: none;
   border-radius: var(--radius);
-  padding: 0.8rem 1.5rem;
-  transition: 0.3s;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(255, 133, 161, 0.4);
 }
 .stFormSubmitButton > button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 114, 255, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(255, 133, 161, 0.6);
 }
 
 /* Prediction Messages */
-.stSuccess, .stInfo, .stError {
+.stSuccess, .stInfo {
   border-radius: var(--radius);
   color: white;
-  padding: 1rem;
+  padding: 1.5rem;
   font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.stSuccess {
+  background-color: #4CAF50;
+}
+.stInfo {
+  background-color: #2196F3;
 }
 
 /* Scrollbar */
@@ -112,11 +122,14 @@ label {
   width: 8px;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
   border-radius: 4px;
 }
+::-webkit-scrollbar-track {
+  background: #2c2c2c;
+}
 
-/* Hide Menu */
+/* Hide Streamlit elements */
 #MainMenu, footer, .stDeployButton {visibility: hidden;}
 </style>
 """, unsafe_allow_html=True)
