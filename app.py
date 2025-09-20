@@ -16,25 +16,25 @@ st.set_page_config(
 # ---------------------------
 st.markdown("""
 <style>
-/* Import Fonts - A futuristic, clean font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600;700&display=swap');
+/* Import Fonts - Lato for a clean, professional look */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
-/* Color Variables - Neon/Cyberpunk Theme */
+/* Color Variables - Soft Blue & Gray Theme */
 :root {
-  --bg-primary: #0A0A0A;
-  --bg-secondary: #1C1C1C;
-  --accent-1: #00FFFF; /* Cyan */
-  --accent-2: #FF00FF; /* Magenta */
-  --text-light: #E0E0E0;
-  --text-muted: #888888;
-  --radius: 16px;
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F0F4F8;
+  --accent-1: #4A90E2; /* Soft Blue */
+  --accent-2: #8096A9; /* Muted Gray */
+  --text-dark: #333333;
+  --text-muted: #666666;
+  --radius: 12px;
 }
 
 /* Global Styles */
 body {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Lato', sans-serif;
   background-color: var(--bg-primary);
-  color: var(--text-light);
+  color: var(--text-dark);
 }
 
 /* Main Container Padding */
@@ -45,12 +45,10 @@ body {
 
 /* Title Styling */
 h1 {
-  font-weight: 700;
+  font-weight: 900;
   text-align: center;
   font-size: 3.5rem;
-  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--accent-1);
   margin-bottom: 1rem;
 }
 
@@ -67,45 +65,45 @@ h1 {
   background-color: var(--bg-secondary);
   border-radius: var(--radius);
   padding: 3rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  border: 1px solid #E0E0E0;
 }
 
 /* Input Fields */
 input, select {
-  background-color: #2c2c2c !important;
-  color: var(--text-light) !important;
+  background-color: #FFFFFF !important;
+  color: var(--text-dark) !important;
   border-radius: var(--radius) !important;
-  border: none !important;
+  border: 1px solid #DDDDDD !important;
   padding: 0.75rem 1rem !important;
-  border-left: 2px solid var(--accent-1) !important;
   transition: all 0.3s ease-in-out;
 }
 input:focus, select:focus {
-  border-left: 2px solid var(--accent-2) !important;
-  box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
+  border: 1px solid var(--accent-1) !important;
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.2);
 }
 
 /* Labels */
 label {
-  font-weight: 600 !important;
-  color: var(--text-light) !important;
+  font-weight: 700 !important;
+  color: var(--text-dark) !important;
 }
 
 /* Button Styling */
 .stFormSubmitButton > button {
-  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-  color: var(--bg-primary);
+  background-color: var(--accent-1);
+  color: white;
   font-weight: 700;
   border: none;
   border-radius: var(--radius);
   padding: 1rem 2rem;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
 }
 .stFormSubmitButton > button:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(255, 0, 255, 0.6);
+  background-color: #3973C1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.6);
 }
 
 /* Prediction Messages */
@@ -113,14 +111,14 @@ label {
   border-radius: var(--radius);
   color: white;
   padding: 1.5rem;
-  font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 .stSuccess {
-  background-color: #2ECC71; /* A brighter green */
+  background-color: #2ECC71;
 }
 .stInfo {
-  background-color: #3498DB; /* A brighter blue */
+  background-color: #3498DB;
 }
 
 /* Scrollbar */
@@ -128,11 +126,11 @@ label {
   width: 8px;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  background-color: var(--accent-1);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #2c2c2c;
+  background: #E0E0E0;
 }
 
 /* Hide Streamlit elements */
