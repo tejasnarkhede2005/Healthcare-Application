@@ -1,17 +1,6 @@
 # Healthcare-Application
 
+<img width="1092" height="587" alt="image" src="https://github.com/user-attachments/assets/b4e5c194-16ca-47e4-885e-84d95c94a91c" />
 
-graph TD
-A[Start] --> B(Download or Clone Project Files);
-B --> C{Files in place?};
-C -- Yes --> D[Create Virtual Environment];
-C -- No --> B;
-D --> E[Activate Virtual Environment];
-E --> F[Install Dependencies from requirements.txt];
-F --> G[Navigate to Project Directory];
-G --> H[Run Streamlit App with `streamlit run app.py`];
-H --> I(Application Runs on Local Server);
-I --> J[Open App in Browser];
-J --> K(Interact with the App);
-K --> L[End];
+
 
