@@ -16,23 +16,23 @@ st.set_page_config(
 # ---------------------------
 st.markdown("""
 <style>
-/* Import Fonts - Poppins is a modern, clean font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+/* Import Fonts - A futuristic, clean font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600;700&display=swap');
 
-/* Color Variables */
+/* Color Variables - Neon/Cyberpunk Theme */
 :root {
-  --bg-primary: #121212;
-  --bg-secondary: #1E1E1E;
-  --accent-1: #FF85A1;
-  --accent-2: #8A2BE2;
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #1C1C1C;
+  --accent-1: #00FFFF; /* Cyan */
+  --accent-2: #FF00FF; /* Magenta */
   --text-light: #E0E0E0;
-  --text-muted: #BDBDBD;
+  --text-muted: #888888;
   --radius: 16px;
 }
 
 /* Global Styles */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   background-color: var(--bg-primary);
   color: var(--text-light);
 }
@@ -78,6 +78,12 @@ input, select {
   border-radius: var(--radius) !important;
   border: none !important;
   padding: 0.75rem 1rem !important;
+  border-left: 2px solid var(--accent-1) !important;
+  transition: all 0.3s ease-in-out;
+}
+input:focus, select:focus {
+  border-left: 2px solid var(--accent-2) !important;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
 }
 
 /* Labels */
@@ -89,17 +95,17 @@ label {
 /* Button Styling */
 .stFormSubmitButton > button {
   background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-  color: white;
-  font-weight: 600;
+  color: var(--bg-primary);
+  font-weight: 700;
   border: none;
   border-radius: var(--radius);
   padding: 1rem 2rem;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 15px rgba(255, 133, 161, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
 }
 .stFormSubmitButton > button:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(255, 133, 161, 0.6);
+  box-shadow: 0 8px 25px rgba(255, 0, 255, 0.6);
 }
 
 /* Prediction Messages */
@@ -111,10 +117,10 @@ label {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 .stSuccess {
-  background-color: #4CAF50;
+  background-color: #2ECC71; /* A brighter green */
 }
 .stInfo {
-  background-color: #2196F3;
+  background-color: #3498DB; /* A brighter blue */
 }
 
 /* Scrollbar */
